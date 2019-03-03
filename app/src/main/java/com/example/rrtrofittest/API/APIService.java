@@ -10,6 +10,10 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface APIService {
+
     @GET("{token}/deputies{format}")
-    Call<List<DeputyModelResponse>> getDeputy(@Path("token") String token, @Path("format") String format, @Query("current") boolean current);
+    Call<List<DeputyModelResponse>> getDeputy(
+            @Path("token") String token,
+            @Path("format") String format,
+            @Query("current") boolean current);
 }

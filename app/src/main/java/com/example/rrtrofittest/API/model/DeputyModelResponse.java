@@ -1,4 +1,3 @@
-
 package com.example.rrtrofittest.API.model;
 
 import com.google.gson.annotations.Expose;
@@ -19,8 +18,4 @@ public class DeputyModelResponse {
     @Expose
     public boolean isCurrent;
 
-    @Override
-    public String toString() {
-        return name;
-    }
 }

@@ -11,9 +11,9 @@ import retrofit2.Call;
 
 public class DataManager {
 
-    private APIService mAPIService;
-
     private static DataManager instance;
+
+    private APIService mAPIService;
 
     private DataManager() {
         mAPIService = ServiceConstructor.CreateService(APIService.class);
@@ -26,6 +26,9 @@ public class DataManager {
     }
 
     public Call<List<DeputyModelResponse>> getDeputy(boolean current) {
-        return mAPIService.getDeputy(APIConfig.API_KEY, APIConfig.FORMAT, current);
+        return mAPIService.getDeputy(
+                APIConfig.TOKEN,
+                APIConfig.FORMAT,
+                current);
     }
 }

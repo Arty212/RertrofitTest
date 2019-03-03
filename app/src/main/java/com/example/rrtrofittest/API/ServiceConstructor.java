@@ -1,7 +1,5 @@
 package com.example.rrtrofittest.API;
 
-import java.util.concurrent.TimeUnit;
-
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -11,12 +9,10 @@ public class ServiceConstructor {
 
     public static <T> T CreateService(Class<T> serviceClass) {
 
-
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-        logging.setLevel(HttpLoggingInterceptor.Level.BASIC);
+        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder()
                 .addInterceptor(logging)
-                .readTimeout(60 * 1000 , TimeUnit.MILLISECONDS)
                 .build();
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -27,4 +23,5 @@ public class ServiceConstructor {
 
         return retrofit.create(serviceClass);
     }
+
 }

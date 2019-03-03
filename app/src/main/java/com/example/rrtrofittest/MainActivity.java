@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ListView mList;
     private SwipeRefreshLayout mSwipe;
-    private ArrayAdapter<DeputyModelResponse> adapter;
+    private ArrayAdapter<DeputyModelResponse> mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mList = findViewById(R.id.list);
+        mAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1);
+        mList.setAdapter(mAdapter);
+
         mSwipe = findViewById(R.id.swipe);
         mSwipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -34,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 loadDeputy();
             }
         });
-        adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1);
+
         loadDeputy();
     }
 
@@ -45,16 +48,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<DeputyModelResponse>> call, Response<List<DeputyModelResponse>> response) {
                 mSwipe.setRefreshing(false);
-                if (response.code() == 200)
-                    adapter.addAll(response.body());
-                else
-                    ShowSnackbar("Что-то пошло не так =(");
+                if (response.body() != null) {
+                    mAdapter.addAll(response.body());
+                }
             }
 
             @Override
             public void onFailure(Call<List<DeputyModelResponse>> call, Throwable t) {
                 mSwipe.setRefreshing(false);
-                ShowSnackbar("Что-то пошло не так =(");
+                ShowSnackbar("Что-то пошло не так.... =(((((");
             }
         });
     }
