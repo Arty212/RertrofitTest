@@ -1,4 +1,4 @@
-package com.example.rrtrofittest.API;
+package com.example.retrofittest.API;
 
 public class APIConfig {
     public static final String BASE_URL = "https://api.duma.gov.ru/api/";

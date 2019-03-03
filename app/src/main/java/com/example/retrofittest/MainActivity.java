@@ -1,4 +1,4 @@
-package com.example.rrtrofittest;
+package com.example.retrofittest;
 
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.rrtrofittest.API.model.DeputyModelResponse;
+import com.example.retrofittest.API.model.DeputyModelResponse;
 
 import java.util.List;
 
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void loadDeputy() {
         mSwipe.setRefreshing(true);
-        Call<List<DeputyModelResponse>> call = DataManager.getInstance().getDeputy(true);
+        Call<List<DeputyModelResponse>> call = DataManager.getInstance().getDeputy(false);
         call.enqueue(new Callback<List<DeputyModelResponse>>() {
             @Override
             public void onResponse(Call<List<DeputyModelResponse>> call, Response<List<DeputyModelResponse>> response) {

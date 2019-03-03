@@ -1,4 +1,4 @@
-package com.example.rrtrofittest.API.model;
+package com.example.retrofittest.API.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

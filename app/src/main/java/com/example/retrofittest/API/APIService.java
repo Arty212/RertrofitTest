@@ -1,6 +1,6 @@
-package com.example.rrtrofittest.API;
+package com.example.retrofittest.API;
 
-import com.example.rrtrofittest.API.model.DeputyModelResponse;
+import com.example.retrofittest.API.model.DeputyModelResponse;
 
 import java.util.List;
 

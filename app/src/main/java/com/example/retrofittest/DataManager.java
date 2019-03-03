@@ -1,9 +1,9 @@
-package com.example.rrtrofittest;
+package com.example.retrofittest;
 
-import com.example.rrtrofittest.API.APIConfig;
-import com.example.rrtrofittest.API.APIService;
-import com.example.rrtrofittest.API.ServiceConstructor;
-import com.example.rrtrofittest.API.model.DeputyModelResponse;
+import com.example.retrofittest.API.APIConfig;
+import com.example.retrofittest.API.APIService;
+import com.example.retrofittest.API.ServiceConstructor;
+import com.example.retrofittest.API.model.DeputyModelResponse;
 
 import java.util.List;
 

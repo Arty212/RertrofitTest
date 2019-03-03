@@ -1,4 +1,4 @@
-package com.example.rrtrofittest;
+package com.example.retrofittest;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

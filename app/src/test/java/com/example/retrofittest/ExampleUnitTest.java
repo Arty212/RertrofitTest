@@ -1,4 +1,4 @@
-package com.example.rrtrofittest;
+package com.example.retrofittest;
 
 import org.junit.Test;
 
